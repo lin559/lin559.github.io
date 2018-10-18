@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>LIN&#39;s Studio</title>
+    <title>test · LIN&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -77,6 +77,8 @@
 
     <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
@@ -201,14 +203,23 @@
 </head>
 
     
-        <body class="home-body">
+        <body class="post-body">
     
     
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >LIN&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">test</a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>LIN's Studio.</a>
 </header>
@@ -227,17 +238,17 @@ height:50vh;
     <!-- 主页  -->
     
     
-    <!-- 文章页  -->
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            LIN's Studio.
-            <!-- 文章页  -->
+            test
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
@@ -245,12 +256,43 @@ height:50vh;
             <!-- 主页副标题  -->
             
             
-                想要蓝胖子的大口袋！
-            
-            <!-- 文章页  -->
+            <!-- 404 -->
             
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2018/10/19</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -351,188 +393,81 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/19/test/" >
-            
-                <span>test</span>
-        </a>
-        <div class="abstract-content">
-            问题一 绑定不便事实上不只是 throttle ，相当一类工具类函数，特指 Lodash 中那一类接受一个函数返回一个新的函数的函数，会遇到无法直接绑定到 component 的 methods 上，首先是无法使用对象方法的简写语法，即
-export default {  methods:{    methods1(){      // this.something    }    // 想啥呢？    throttle(()=&gt;{
-}),
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>问题一 绑定不便<br>事实上不只是 throttle ，相当一类工具类函数，特指 Lodash 中那一类接受一个函数返回一个新的函数的函数，会遇到无法直接绑定到 component 的 methods 上，首先是无法使用对象方法的简写语法，即</p>
+<p>export default {<br>  methods:{<br>    methods1(){<br>      // this.something<br>    }<br>    // 想啥呢？<br>    throttle(()=&gt;{</p>
+<pre><code>}),
 methods2:throttle(()=&gt;{
   // 没有 this 
   })
-  }}这样的方法，读取到 vue 挂载 comp...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/19</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
+</code></pre><p>  }<br>}<br>这样的方法，读取到 vue 挂载 component 的时候为 methods 中的方法绑定的 this，</p>
+<p>解决方案<br>这个问题好解决，本身 methods 用对象方法也只是一个简写，把 function 定义的方法的 this 指向当前组件实例。所以解决方法很简单</p>
+<p>export default {<br>  methods:{<br>    methods3:throttle(function(){<br>      // 可以正常使用 this</p>
+<pre><code>})
+</code></pre><p>  }<br>}<br>这个其实没什么好说的，在官网上面都有说明，只是我没有想到而已。我没有注意到还是因为惯性思维，习惯了用箭头函数跟对象方法的简写定义，忘记直接用 function 才是最基本的做法。</p>
+<p>但是要留意的一点是这里可以 throttle 里的 function 可以绑定到组件实例的 this，一个重要的原因是，throttle 返回的包裹函数调用的时候一般会使用 apply 来将 this 传入调用的 function ，没有用 apply 直接调用的话 this 就不是组件实例了 。</p>
+<p>类似 Lodash ，都会细心的处理到这一点，如果你自己定义一些类似的工具函数，不要忘记在包裹函数里通过 apply 去调用。</p>
+<p>问题二 实例共享<br>如果说第一个问题还是个小问题，那么第二个问题要烦人许多。这不是单个特例，而同样的是一类特定函数会遇到，其中同样可以以 throttle 作为例子。</p>
+<p>让我们回看问题一的解决方法，其中解决了 this 的指向问题，不过，请考虑以下代码</p>
+<p><template><br>  <div @click="click" v-text="num"><br>  </div><br></template></p>
+<p><script><br>  export default {<br>    name:’com’<br>    data(){<br>      return {<br>        num: 1<br>      }<br>      },<br>    methods:{<br>      click:throttle(function(){<br>        // 可以正常使用 this<br>        this.num+=1<br>      },2000)<br>      }<br>  }<br></script><br>// ———–</p>
+<p><template><br>  <com></com><br>  <com></com><br></template></p>
+<p><script><br>  export default {<br>    name:’parent’<br>    component:{com}<br>  }<br></script><br>按照预期，我们会希望子组件 com 的点击事件每隔 2s 触发一次，然而在上面的有两个 com 子组件的例子中，假如你在 2s 内分别点击了两个 com 子组件，就会发现只有第一个被点击的 com 子组件正常执行了 num + 1 操作。而第二个被点击的组件无法触发 num + 1 操作，这就是第二问题了。</p>
+<p>我们知道 throttle 可以控制函数的调用频率，即使不去看其实现，我们都知道它必然是通过闭包保存了一个计时器，以判断是否应该执行传入的函数。</p>
+<p>闭包当然保证了每个 throttle 都是独立的，这点毋庸置疑。问题依然在于 vue 的 methods 的定义方式。</p>
+<p>当我们如上例所示定义了一个函数的时候，需要注意的是我们的 throttle 实际上只在定义组件的时候执行了一次，赋值给 click ，因此这个组件的所有实例共享同一个静态的 click 方法，共享了同一个 throttle 返回的闭包计时器。</p>
+<p>这就导致了上面的问题，存在多个组件实例时，不是每个实例一个 throttle 计时器，而是共用了一个计时器，相互影响。</p>
+<p>从这里可以推论出，凡是形如 throttle 那样借助闭包保存私有变量比如计时的函数，如果用上面的使用方法，都会遇到闭包私有变量被多个组件实例共享的问题。</p>
+<p>目前来说，只要还是想要将方法都静态定义于 methods 中就没有什么解决方案。</p>
+<p>解决方法<br>所以，如果你想要避免这个问题，那就只能考虑在组件实例化的时候才去定义这些方法了。</p>
+<p>你可以在mounted及之前的生命周期中，又或者是 data 函数中去定义这些方法</p>
+<p>export default {<br>  data(){<br>    const click = throttle(()=&gt;this.num+ =1, 1000)<br>    return {<br>      click,<br>    }<br>  },<br>  mounted(){<br>    // 一个额外的好处是可以使用箭头函数<br>       this.click = throttle(()=&gt;this.num+ =1, 1000)<br>  }<br>}<br>不过，这样就失去了在 methods 定义函数的直观这一点，其次是在这两者中定义的时候，需要考虑到生命周期的问题，是否在定义的时候会使用到一些还未初始化的数据。</p>
+<p>比如这样就不行</p>
+<p>export default {<br>  created(){<br>    // 此时 $el 未被初始化<br>    const name = this.$el.name<br>       this[name] = throttle(()=&gt;this.num+ =1, 1000)<br>  }<br>}<br>总结<br>总的来说，本文展示了 vue component 的 methods 定义方式下的两个问题，分别是通过函数返回函数时，函数中 this 指向问题，以及通过函数返回函数时，闭包私用变量被共享的问题。</p>
+<p>第一个问题可以通过 function 关键字解决，第二个问题，如果不涉及到多实例会同时使用的情况，那么就没有问题，不然则只能通过在组件实例化的时候在各个生命周期中或者data函数中定义方法。</p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/19/post/" >
-            
-                <span>post</span>
-        </a>
-        <div class="abstract-content">
-            
+        <div class="license-wrapper">
+            <p>原文作者：<a href="http://yoursite.com">John Doe</a>
+            <p>原文链接：<a href="http://yoursite.com/2018/10/19/test/">http://yoursite.com/2018/10/19/test/</a>
+            <p>发表日期：<a href="http://yoursite.com/2018/10/19/test/">October 19th 2018, 12:37:00 am</a>
+            <p>更新日期：<a href="http://yoursite.com/2018/10/19/test/">October 19th 2018, 12:37:18 am</a>
+            <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/19</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2018/10/14/hello-world/" >
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/10/14</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
-    
-</main>
-            <!-- profile -->
+    <ul class="post-paginator">
+        <li class="next">
             
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src= /avatar/DUOLA.JPG >
-    <div class="profile-name">LIN</div>
-    
-    <div class="profile-signature">
-        witness me
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
+        </li>
+        <li class="previous">
             
-                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2018/10/19/post/" title= "post">
+                    <div class="prevTitle">post</div>
+                </a>
             
-        
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
-        
-            
-                <a href="//github.com/lin559" class="iconfont-archer github" target="_blank" title=github></a>
-            
-        
     
-        
-            
-                <span class="iconfont-archer wechat" title=wechat>
-                  
-                  <img class="profile-qr" src="/assets/example_qr.png" />
-                </span>
-            
-        
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
     
 
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href= //www.baidu.com target="_black">friendA</a>
-                    </span>
-                
-            
-                
-                    <span>
-                        <a href= //www.google.com target="_black">friendB</a>
-                    </span>
-                
-            
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href = "/about" >ABOUT ME</a>
-        </div>
-    
-</div>
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
             
         </div>
         <footer class="footer footer-unloaded">
@@ -615,6 +550,24 @@ More...
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -752,6 +705,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
