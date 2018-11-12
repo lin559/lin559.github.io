@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <title>fix-first-week · LIN&#39;s Studio</title>
+    <title>数据结构还真挺重要的。。。 · LIN&#39;s Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >LIN&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">fix-first-week</a>
+                <a href="#" class="post-name">数据结构还真挺重要的。。。</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            fix-first-week
+            数据结构还真挺重要的。。。
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "fix,task1">fix,task1</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "数据结构">数据结构</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">911</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.2k</span>阅读时长: <span class="post-count reading-time">5 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2018/10/28</span>
+                    <span class="post-intro-time">2018/11/12</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,56 +401,29 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <blockquote>
-<ul>
-<li style="list-style: none"><input type="checkbox" checked> this的指向问题（这个真的太重要的了！）</li>
-<li style="list-style: none"><input type="checkbox"> nextTick（）</li>
-<li style="list-style: none"><input type="checkbox"> 整理总结数组/字符串常用方法（别每次都是搜索引擎。。。）</li>
-<li style="list-style: none"><input type="checkbox"> 项目中经常用到的betterScroll插件</li>
-<li style="list-style: none"><input type="checkbox"> Vue生命周期（这个真的也很重要！）</li>
-<li style="list-style: none"><input type="checkbox"> 地图项目使用到了leaflet库（毕竟花了那么长时间研究，好好总结复盘一下）</li>
-<li style="list-style: none"><input type="checkbox"> 一个数组对象，需要按照对象的某个属性(汉字)进行拼音排序</li>
-</ul>
-</blockquote>
-<h2 id="this全面解析"><a href="#this全面解析" class="headerlink" title="this全面解析"></a>this全面解析</h2><p>函数的执行过程中调用位置决定了this绑定的对象。以下分两种情况：非箭头函数情况、箭头函数情况。</p>
-<h3 id="非箭头函数"><a href="#非箭头函数" class="headerlink" title="非箭头函数"></a>非箭头函数</h3><p>非箭头函数存在四条绑定规则（参考《你不知道的JavaScript上卷》）</p>
-<h4 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h4><p>日常使用最常见的函数调用方式为独立函数调用，即声明函数之后直接调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">var a = &apos;hello wold&apos;;</span><br><span class="line">foo(); //hello world</span><br></pre></td></tr></table></figure></p>
-<p>在如上代码中函数调用应用了this的默认绑定，this指向全局对象。在我的理解中，相当于foo()函数直接在全局对象下执行，a也是在全局对象下定义的，因此输出的是全局对象的a。</p>
-<h4 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h4><p>书中描述为此条规则需要考虑调用位置是否有上下文，或者说是否被某个对象拥有或包围，大概跟默认绑定类似，但是默认绑定的上下文为全局对象，但是隐式绑定需要自己寻找其上下文。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    a: 2,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line">obj.foo(); // 2</span><br></pre></td></tr></table></figure>
-<p>即foo()函数的上下文为obj，obj包含foo函数，故将this绑定到obj上，在此刻obj.a跟this.a是一样的。<br>当出现多次函数嵌套的时候，只需要关注this的上一层即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">var obj2 = &#123;</span><br><span class="line">    a: 42,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line">var obj1 = &#123;</span><br><span class="line">    a: 2,</span><br><span class="line">    obj2: obj2</span><br><span class="line">&#125;;</span><br><span class="line">obj1.obj2.foo();// 42</span><br></pre></td></tr></table></figure></p>
-<p>因为调用foo()的是obj2，因此foo()的上下文为obj2，所以输出的是42.</p>
-<p>隐式绑定存在一种隐式丢失的问题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    a:2,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line">var bar = obj.foo;</span><br><span class="line">var a = &quot;hello world!&quot;;</span><br><span class="line">bar(); // hello world</span><br></pre></td></tr></table></figure>
-<p>bar是obj.foo的一个引用，但引用的是foo函数本身，相当于被赋值，bar存在于全局环境下，因此执行bar()就相当于默认绑定，调用全局对象的a</p>
-<p>另外还有一种传入回调函数的情况</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function foo() &#123;</span><br><span class="line">    console.log(this.a);</span><br><span class="line">&#125;</span><br><span class="line">function doFoo(fn) &#123;</span><br><span class="line">    fn();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = &#123;</span><br><span class="line">    a: 2,</span><br><span class="line">    foo: foo</span><br><span class="line">&#125;;</span><br><span class="line">var a = &quot;hello world!&quot;</span><br><span class="line">doFoo(obj.foo); // hello world</span><br></pre></td></tr></table></figure>
-<p>参数传递是一种隐式赋值，即传进去的函数被隐式赋值了。因此就跟上面的例子一样了。</p>
-<h4 id="显式绑定"><a href="#显式绑定" class="headerlink" title="显式绑定"></a>显式绑定</h4><h4 id="new绑定"><a href="#new绑定" class="headerlink" title="new绑定"></a>new绑定</h4><h3 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h3><h2 id="数组字符串常用方法"><a href="#数组字符串常用方法" class="headerlink" title="数组字符串常用方法"></a>数组字符串常用方法</h2><h3 id="Array方法"><a href="#Array方法" class="headerlink" title="Array方法"></a>Array方法</h3><ul>
-<li><p>array.pop()<br>删除数组的最后一个元素，并返回这个元素</p>
-</li>
-<li><p>array.push()<br>添加一个或多个元素的位置，并返回数组新长度</p>
-</li>
-<li><p>array.reverse()<br>前后颠倒数组中元素的位置，第一个元素会成为最后一个</p>
-</li>
-<li><p>array.shift()<br>删除数组的第一个元素，并返回该元素</p>
-</li>
-<li><p>array.unshift(element1, …elementN)<br>在数组的开头插入一个或者多个元素，并返回数组的新长度</p>
-</li>
-<li><p>array.sort(function(a,b))<br>对数组的元素做原地的排序，并返回这个数组。</p>
-</li>
-<li><p>array.slice(start, deleteCount[])<br>在任意位置给数组添加或删除任意个元素(拼接), 返回被删除的元素组成的数组，没有则返回空数组</p>
-</li>
-</ul>
-
+        <h3 id="来谈谈数据结构"><a href="#来谈谈数据结构" class="headerlink" title="来谈谈数据结构"></a>来谈谈数据结构</h3><pre><code>大学的时候虽然学过，但也差不多学过就忘，加上平时也没怎么用到，所以这一部分还是不太了解。进来遇到的一个项目让我想起了之前的数据结构。。。那些年欠的债还是得找机会还上啊！
+</code></pre><h3 id="问题来了"><a href="#问题来了" class="headerlink" title="问题来了"></a>问题来了</h3><pre><code>在一个项目里，由于后台没有返回处理好的数据（在这里深深地谴责一下）需要前端调接口获取数据，然后再对数据进行处理封装成可用的格式。该数据为汽车的车辆品牌、子品牌、年款，返回的数据如下，根据dataValue=1028表示奥迪，1028.10，表示奥迪A7(前提是必须知道1028是奥迪品牌)，1028.10.3，表示奥迪A7的2014balabala年款(同理，必须知道1028.10为奥迪A7)
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;id&quot;: 5701,</span><br><span class="line">    &quot;dataValue&quot;: &quot;1028&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;奥迪&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">    &quot;id&quot;: 5705,</span><br><span class="line">    &quot;dataValue&quot;: &quot;1028.10&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;A7&quot;</span><br><span class="line">&#125;,</span><br><span class="line">&#123;</span><br><span class="line">    &quot;id&quot;: 5710,</span><br><span class="line">    &quot;dataValue&quot;: &quot;1028.10.3&quot;,</span><br><span class="line">    &quot;name&quot;: &quot;2014,2013,2012豪华型&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>而上文中说的可用的格式类似如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;1028&quot;: &#123;</span><br><span class="line">        &quot;10&quot;: &#123;</span><br><span class="line">            &quot;3&quot;: &#123;</span><br><span class="line">                name: &quot;2014,2013,2012豪华款&quot;</span><br><span class="line">            &#125;，</span><br><span class="line">            name: &quot;A7&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        name: &quot;奥迪&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最开始的想法，能够实现就行。返回的数据是数组类型的，就开始无脑操作了(虽然还是想了有一会儿)各种forEach循环，劈里啪啦搞定了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">// dic为获取到的车辆品牌数据 数组类型</span><br><span class="line">let objname = &apos;car&apos;;</span><br><span class="line">let obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 版本1</span><br><span class="line">let mainBrand = [];</span><br><span class="line">let subBrand = [];</span><br><span class="line">let modelYear = [];</span><br><span class="line">obj[objname] = &#123;&#125;</span><br><span class="line">dic.forEach((item, index) =&gt; &#123;</span><br><span class="line">    //arr.length 为1表示主品牌；为2表示子品牌；为3表示年款</span><br><span class="line">    let arr = dic[index].dataValue.split(&quot;.&quot;);</span><br><span class="line">    if(arr.length === 1) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            mainBrand.push(dic[index].dataValue);</span><br><span class="line">            obj[objname][dic[index].dataValue] = &#123;&#125;;</span><br><span class="line">            obj[objname][dic[index].dataValue].name = item.name;</span><br><span class="line">        &#125; catch(err) &#123;</span><br><span class="line">            console.log(err);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else if(arr.length === 2) &#123;</span><br><span class="line">        mainBrand.forEach((mainItem, index) =&gt; &#123;</span><br><span class="line">            if(arr[0] === mainItem) &#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    obj[objname][mainItem][arr[1]] = &#123;&#125;;</span><br><span class="line">                    obj[objname][mainItem][arr[1]].name = item.name;</span><br><span class="line">                    obj[objname][mainItem][arr[1]].val = arr[1];</span><br><span class="line">                    obj[objname][mainItem][arr[1]].isSelected = false;</span><br><span class="line">                &#125; catch(err) &#123;</span><br><span class="line">                    console.log(err);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        subBrand.push(dic[index].dataValue);</span><br><span class="line">    &#125; else if(arr.length === 3) &#123;</span><br><span class="line">        subBrand.forEach((subItem, index) =&gt; &#123;</span><br><span class="line">            let inow = subItem.split(&quot;.&quot;)[1];</span><br><span class="line">            if(arr[1] === inow) &#123;</span><br><span class="line">                try &#123;</span><br><span class="line">                    obj[objname][arr[0]][arr[1]][arr[2]] = &#123;&#125;;</span><br><span class="line">                    obj[objname][arr[0]][arr[1]][arr[2]].name = item.name;</span><br><span class="line">                &#125; catch(err) &#123;</span><br><span class="line">                    console.log(err);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(obj.car);</span><br></pre></td></tr></table></figure>
+<p>打完收工？</p>
+<p>不存在的！总共返回的数据有一万多条！然后处理的时候还用了好几次for循环？？？浏览器端加载都花了快10s的时间，何况这是要运在手机上的。妥妥地被测试部提缺陷了，手机进入也页面加载数据直接卡顿住了，不耐烦的人可能直接摔手机了，估计等个四五十秒数据才加载好。缺陷提过来了，那就改吧。怎么改呢</p>
+<h3 id="改缺陷啦"><a href="#改缺陷啦" class="headerlink" title="改缺陷啦"></a>改缺陷啦</h3><p>上网找资料的怎么解决for循环的时间开销，发现了可以用其他的数据结构，并不一定要用数组的结构来存储，比如ES6的Map对象，键值对集合，有了这个，就不必再去循环查找了。之后就是大刀阔斧地改代码了。有种把之前代码推倒重来得感觉，还不是怪自己之前没想好。改好后的代码如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">// 版本2</span><br><span class="line">let mainBrandMap = new Map();</span><br><span class="line">let subBrandMap = new Map();</span><br><span class="line">let modelYear = new Map();</span><br><span class="line">obj[objname] = &#123;&#125;;</span><br><span class="line">dic.forEach((item, index) =&gt; &#123;</span><br><span class="line">    let arr = dic[index].dataValue.split(&quot;.&quot;);</span><br><span class="line">    if (arr.length === 1) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            mainBrandMap.set(dic[index].dataValue, dic[index].dataValue);</span><br><span class="line">            obj[objname][dic[index].dataValue] = &#123;&#125;;</span><br><span class="line">            obj[objname][dic[index].dataValue].name = item.name;</span><br><span class="line">        &#125; catch (err) &#123;</span><br><span class="line">            console.log(err);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else if (arr.length === 2) &#123;</span><br><span class="line">        if (arr[0] === mainBrandMap.get(arr[0])); &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                obj[objname][arr[0]][arr[1]] = &#123;&#125;;</span><br><span class="line">                obj[objname][arr[0]][arr[1]].name = item.name;</span><br><span class="line">                obj[objname][arr[0]][arr[1]].val = arr[1];</span><br><span class="line">                obj[objname][arr[0]][arr[1]].isSelected = false;</span><br><span class="line">            &#125; catch (err) &#123;</span><br><span class="line">                console.log(err);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; else if (arr.length === 3) &#123;</span><br><span class="line">        if (arr[0] + &quot;.&quot; + arr[1] === subBrandMap.get(arr[0] + &quot;.&quot; + arr[1])) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                obj[objname][arr[0]][arr[1]][arr[2]] = &#123;&#125;;</span><br><span class="line">                obj[objname][arr[0]][arr[1]][arr[2]].name = item.name;</span><br><span class="line">            &#125; catch (err) &#123;</span><br><span class="line">                console.log(err);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>改完之后顺便还用console.time()测试了一把消耗的时间，测试结果感人！<br>修改前 ‘8538ms’ ——–&gt;修改后 ‘28.90ms’ 真的是质的飞跃</p>
+<p>数据结构要重新捡起来学了，hash表之前考试的时候印象还是蛮深的，但就是没有用上，不知道用在哪里。在工作中将它们慢慢实践。</p>
+<p>数据处理完了吗？<br>NO，还需要根据主品牌的汉字拼音进行排序</p>
+<h3 id="汉字拼音排序"><a href="#汉字拼音排序" class="headerlink" title="汉字拼音排序"></a>汉字拼音排序</h3>
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://lin559.github.io">LIN</a>
-            <p>原文链接：<a href="https://lin559.github.io/2018/10/28/fix-first-week/">https://lin559.github.io/2018/10/28/fix-first-week/</a>
-            <p>发表日期：<a href="https://lin559.github.io/2018/10/28/fix-first-week/">October 28th 2018, 5:25:43 pm</a>
-            <p>更新日期：<a href="https://lin559.github.io/2018/10/28/fix-first-week/">November 7th 2018, 11:30:49 pm</a>
+            <p>原文链接：<a href="https://lin559.github.io/2018/11/12/数据结构还真挺重要的。。。/">https://lin559.github.io/2018/11/12/数据结构还真挺重要的。。。/</a>
+            <p>发表日期：<a href="https://lin559.github.io/2018/11/12/数据结构还真挺重要的。。。/">November 12th 2018, 11:53:14 pm</a>
+            <p>更新日期：<a href="https://lin559.github.io/2018/11/12/数据结构还真挺重要的。。。/">November 13th 2018, 12:25:37 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -458,17 +431,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2018/11/12/数据结构还真挺重要的。。。/" title= "数据结构还真挺重要的。。。">
-                    <div class="nextTitle">数据结构还真挺重要的。。。</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2018/10/22/first-week/" title= "first-week">
-                    <div class="prevTitle">first-week</div>
+                <a href= "/2018/10/28/fix-first-week/" title= "fix-first-week">
+                    <div class="prevTitle">fix-first-week</div>
                 </a>
             
         </li>
@@ -587,7 +555,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#this全面解析"><span class="toc-number">1.</span> <span class="toc-text">this全面解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#非箭头函数"><span class="toc-number">1.1.</span> <span class="toc-text">非箭头函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#默认绑定"><span class="toc-number">1.1.1.</span> <span class="toc-text">默认绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#隐式绑定"><span class="toc-number">1.1.2.</span> <span class="toc-text">隐式绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#显式绑定"><span class="toc-number">1.1.3.</span> <span class="toc-text">显式绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#new绑定"><span class="toc-number">1.1.4.</span> <span class="toc-text">new绑定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#箭头函数"><span class="toc-number">1.2.</span> <span class="toc-text">箭头函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组字符串常用方法"><span class="toc-number">2.</span> <span class="toc-text">数组字符串常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Array方法"><span class="toc-number">2.1.</span> <span class="toc-text">Array方法</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#来谈谈数据结构"><span class="toc-number">1.</span> <span class="toc-text">来谈谈数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题来了"><span class="toc-number">2.</span> <span class="toc-text">问题来了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#改缺陷啦"><span class="toc-number">3.</span> <span class="toc-text">改缺陷啦</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#汉字拼音排序"><span class="toc-number">4.</span> <span class="toc-text">汉字拼音排序</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
